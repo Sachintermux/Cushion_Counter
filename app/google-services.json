@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "797893116867",
+    "firebase_url": "https://chairtime-ae360-default-rtdb.firebaseio.com",
+    "project_id": "chairtime-ae360",
+    "storage_bucket": "chairtime-ae360.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797893116867:android:8c2883a886b5cc42163376",
+        "android_client_info": {
+          "package_name": "com.sna.cushion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797893116867-np60lr7u59biq299me6finlv9uq1v8oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbE4SUuwSkSylZySJQ9k136jrYmFowLqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797893116867-np60lr7u59biq299me6finlv9uq1v8oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
