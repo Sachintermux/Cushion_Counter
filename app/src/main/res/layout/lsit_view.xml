@@ -1,69 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
+    android:layout_height="wrap_content"
     android:background="@null"
-    android:paddingBottom="8dp"
-    android:layout_height="wrap_content">
+    android:orientation="horizontal"
+    android:paddingBottom="8dp">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="10 May 2022"
-        android:textSize="11sp"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:textColor="#CBC69C6D"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
         android:id="@+id/dateTxt_listView"
-        android:fontFamily="@font/open_sans_semi_bold"
-        />
-    <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="17:30"
-        android:textSize="11sp"
         android:layout_gravity="center_vertical"
-        android:gravity="center"
-        android:textColor="#CBC69C6D"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:gravity="center"
+        android:text="10 May 2022"
+        android:textColor="@color/theme_color_dark"
+        android:textSize="11sp" />
+
+    <TextView
         android:id="@+id/occupyTimeTxt_listView"
-        android:fontFamily="@font/open_sans_semi_bold"
-        />
-
-    <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="17:45"
         android:layout_gravity="center_vertical"
-        android:textSize="11sp"
-        android:gravity="center"
-        android:textColor="#CBC69C6D"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:gravity="center"
+        android:text="17:30"
+        android:textColor="@color/theme_color_dark"
+        android:textSize="11sp" />
+
+    <TextView
         android:id="@+id/releasingTimeTxt_listView"
-        android:fontFamily="@font/open_sans_semi_bold"
-        />
-
-    <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="00:15"
         android:layout_gravity="center_vertical"
-        android:textSize="11sp"
-        android:textColor="#CBC69C6D"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
-        android:id="@+id/totalTxt_listView"
-        android:gravity="center"
-        android:layout_marginEnd="6dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
         android:fontFamily="@font/open_sans_semi_bold"
-        />
+        android:gravity="center"
+        android:text="17:45"
+        android:textColor="@color/theme_color_dark"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/totalTxt_listView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="6dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:gravity="center"
+        android:text="00:15"
+        android:textColor="@color/theme_color_dark"
+        android:textSize="11sp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

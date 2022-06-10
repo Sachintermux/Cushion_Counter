@@ -1,8 +1,12 @@
 package com.sna.cushion;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +18,7 @@ public class Settings_Activity extends AppCompatActivity {
 
     private EditText ssid_edt,password_edt;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference myRef = database.getReference("Chair");
+    private DatabaseReference myRef = database.getReference("Chair").child("0");
     private String ssid;
     private  String password;
     @Override
@@ -41,6 +45,12 @@ public class Settings_Activity extends AppCompatActivity {
         myRef.child("SSID").setValue(ssid);
         myRef.child("Password").setValue(password);
         myRef.child("Change").setValue(1);
+        Dialog dialog = new Dialog(Settings_Activity.this);
+        dialog.setContentView(R.layout.password_change_dialog);
+        dialog.show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Button okBtn = dialog.findViewById(R.id.okBtn_passwordChangeD);
+        okBtn.setOnClickListener(view1 -> dialog.cancel());
     }
 
     public void backButtonClick( View view ) {

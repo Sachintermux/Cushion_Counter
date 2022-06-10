@@ -3,15 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2315" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable-v24/settings_ic.xml" value="0.1665" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/ic_back_button_fragment.xml" value="0.1665" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/ic_chair_empty_gray.xml" value="0.2315" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/ic_chair_empty_white.xml" value="0.2315" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/ic_chair_full.xml" value="0.2315" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/ic_dot_sign.xml" value="0.1665" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2315" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/relative_layout_main.xml" value="0.1665" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/round_corner_back_white_password.xml" value="0.2315" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/round_corner_black_back.xml" value="0.194" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/round_corner_dark_gray_back.xml" value="0.2315" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/round_corner_light_gray_back.xml" value="0.2315" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/round_corner_light_yellow_back.xml" value="0.1665" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/round_corner_yellow_back.xml" value="0.1665" />
-        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/save_btn_back_ground.xml" value="0.2315" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/drawable/upper_round_rectangle_ic.xml" value="0.2315" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/layout/activity_settigns.xml" value="0.25" />
         <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/layout/lsit_view.xml" value="0.34427083333333336" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/layout/password_change_dialog.xml" value="0.36302083333333335" />
+        <entry key="..\:/SNA Internship/Cushion Counter App/App/app/src/main/res/layout/text.xml" value="0.36302083333333335" />
       </map>
     </option>
   </component>

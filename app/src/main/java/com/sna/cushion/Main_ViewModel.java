@@ -1,6 +1,8 @@
 package com.sna.cushion;
 
 import android.os.Build;
+import android.os.Handler;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -13,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -30,12 +33,15 @@ public class Main_ViewModel extends ViewModel {
     MutableLiveData<String> ssid = new MutableLiveData<>();
     MutableLiveData<String> password = new MutableLiveData<>();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Chair");
-
+    DatabaseReference myRef = database.getReference("Chair").child("0");
+    MutableLiveData<Boolean> test = new MutableLiveData<>(false);
+    private boolean isDeviceConnected = true;
     public void getData() {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange( @NonNull DataSnapshot snapshot ) {
+                isDeviceConnected = true;
+                test.setValue(true);
                 currentState.setValue(snapshot.child("State").getValue().toString());
                 ssid.setValue(Objects.requireNonNull(snapshot.child("SSID").getValue()).toString());
                 password.setValue(Objects.requireNonNull(snapshot.child("Password").getValue()).toString());
@@ -54,25 +60,16 @@ public class Main_ViewModel extends ViewModel {
 
                     }
                 }
+
                 Collections.sort(arrayList, new Comparator<FireBaseDataModel>() {
                     @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public int compare( FireBaseDataModel t1, FireBaseDataModel  fireBaseDataModel) {
-                        try {
-                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH:mm:ss", Locale.ENGLISH);
-                            return LocalDate.parse(t1.getDate() +"-" +t1.getOccupyTime(), formatter)
-                                    .compareTo(LocalDate.parse(fireBaseDataModel.getDate()+"-"+fireBaseDataModel.getOccupyTime(), formatter));
-                        } catch (DateTimeParseException e) {
-                            try {
-                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy-HH:mm:ss", Locale.getDefault());
-                                return LocalDate.parse(t1.getDate() +"-" +t1.getOccupyTime(), formatter)
-                                        .compareTo(LocalDate.parse(fireBaseDataModel.getDate()+"-"+fireBaseDataModel.getOccupyTime(), formatter));
-                            } catch (DateTimeParseException e1) {
-                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy-HH:mm:ss", Locale.ENGLISH);
-                                return LocalDate.parse(t1.getDate() +"-" +t1.getOccupyTime(), formatter)
-                                        .compareTo(LocalDate.parse(fireBaseDataModel.getDate()+"-"+fireBaseDataModel.getOccupyTime(), formatter));
-                            }
-                        }
+                        LocalDate first = parseTime(t1.getDate() + "-" + t1.getOccupyTime());
+                        LocalDate second = parseTime(fireBaseDataModel.getDate() + "-" + fireBaseDataModel.getOccupyTime());
+                        if(first == null) return 0;
+                        if(second== null) return 1;
+                        return first.compareTo(second);
                     }
                 });
                 Collections.reverse(arrayList);
@@ -84,5 +81,47 @@ public class Main_ViewModel extends ViewModel {
 
             }
         });
+
+
+    }
+
+public void startTimer(){
+
+    Handler handler = new Handler();
+    new Runnable() {
+        @Override
+        public void run() {
+            if(isDeviceConnected) {
+                isDeviceConnected = false;
+                test.setValue(true);
+            }
+            else test.setValue(false);
+
+      handler.postDelayed(this,120000);
+        }
+    }.run();
+
+}
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private LocalDate parseTime( String time){
+
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH:mm:ss", Locale.ENGLISH);
+            return LocalDate.parse(time, formatter);
+        } catch (DateTimeParseException e) {
+            try {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy-HH:mm:ss", Locale.getDefault());
+                return LocalDate.parse(time, formatter);
+            } catch (DateTimeParseException e1) {
+         try {
+             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy-HH:mm:ss", Locale.ENGLISH);
+             return LocalDate.parse(time, formatter);
+         }catch (Exception exception){
+             System.out.println(exception);
+             return null;
+         }
+            }
+        }
     }
 }
